@@ -16,4 +16,5 @@ class AuthenticateUser
     user = User.find_by(email: email)
     return user if user && user.authenticate(password)
     raise(ExceptionHandler::AuthenticateError, Message.invalid_credentisls)
+  end
 end
